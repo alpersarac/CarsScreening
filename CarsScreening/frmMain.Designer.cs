@@ -31,17 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.urlBttn = new System.Windows.Forms.Button();
             this.pContainer = new System.Windows.Forms.Panel();
-            this.urlTxbx = new System.Windows.Forms.TextBox();
+            this.panelStatus = new System.Windows.Forms.Panel();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // urlBttn
             // 
-            this.urlBttn.Location = new System.Drawing.Point(713, 12);
+            this.urlBttn.Location = new System.Drawing.Point(12, 7);
             this.urlBttn.Name = "urlBttn";
             this.urlBttn.Size = new System.Drawing.Size(75, 23);
             this.urlBttn.TabIndex = 0;
-            this.urlBttn.Text = "GO";
+            this.urlBttn.Text = "Start";
             this.urlBttn.UseVisualStyleBackColor = true;
+            this.urlBttn.Click += new System.EventHandler(this.urlBttn_Click);
             // 
             // pContainer
             // 
@@ -50,29 +52,40 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pContainer.Location = new System.Drawing.Point(12, 38);
             this.pContainer.Name = "pContainer";
-            this.pContainer.Size = new System.Drawing.Size(776, 400);
+            this.pContainer.Size = new System.Drawing.Size(1880, 991);
             this.pContainer.TabIndex = 1;
             // 
-            // urlTxbx
+            // panelStatus
             // 
-            this.urlTxbx.Location = new System.Drawing.Point(12, 12);
-            this.urlTxbx.Name = "urlTxbx";
-            this.urlTxbx.Size = new System.Drawing.Size(695, 20);
-            this.urlTxbx.TabIndex = 2;
+            this.panelStatus.Location = new System.Drawing.Point(93, 7);
+            this.panelStatus.Name = "panelStatus";
+            this.panelStatus.Size = new System.Drawing.Size(23, 23);
+            this.panelStatus.TabIndex = 3;
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(122, 12);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(37, 13);
+            this.statusLabel.TabIndex = 4;
+            this.statusLabel.Text = "Status";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.urlTxbx);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.statusLabel);
+            this.Controls.Add(this.panelStatus);
             this.Controls.Add(this.pContainer);
             this.Controls.Add(this.urlBttn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,7 +95,8 @@
 
         private System.Windows.Forms.Button urlBttn;
         private System.Windows.Forms.Panel pContainer;
-        private System.Windows.Forms.TextBox urlTxbx;
+        private System.Windows.Forms.Panel panelStatus;
+        private System.Windows.Forms.Label statusLabel;
     }
 }
 
